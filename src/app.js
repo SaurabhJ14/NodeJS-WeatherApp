@@ -3,7 +3,7 @@ const path = require("path");
 // to use partials we need to require hbs
 const hbs = require("hbs");
 const app = express();
-const port = 8000;
+const PORT = process.env.PORT || 8000;
 
 // public static path
 const static_path = path.join(__dirname, "../public");
@@ -36,6 +36,6 @@ app.get("*", (req, res) => {
     })
 })
 
-app.listen(port, () => {
-    console.log(`listening to the port at ${port}`)
+app.listen(PORT, () => {
+    console.log(`listening to the port at ${PORT}`)
 })
